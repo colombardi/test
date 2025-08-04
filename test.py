@@ -147,3 +147,10 @@ def authenticate(user_input):
 
 user_input = input("Enter password: ")
 authenticate(user_input)
+
+import requests
+
+response = requests.get('http://example.com')
+print(response.text)
+
+
