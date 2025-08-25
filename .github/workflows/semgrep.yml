@@ -10,7 +10,7 @@ on:
   schedule:
   # random HH:MM to avoid a load spike on GitHub Actions at 00:00
   - cron: 51 18 * * *
-name: Semgrep
+name: Security assessment 
 jobs:
   semgrep:
     name: semgrep/ci
@@ -23,3 +23,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: semgrep scan --config auto .
+jobs:
+  trivy:
+    name: trivy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+   
+    container:
+      image: aquasec/trivy
+    steps:
+    - uses: actions/checkout@v4
+    - run: trivy fs .
+    
