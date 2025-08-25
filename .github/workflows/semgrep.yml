@@ -34,5 +34,5 @@ jobs:
       image: aquasec/trivy
     steps:
     - uses: actions/checkout@v4
-    - run: trivy fs .
+    - run: trivy config .
     
