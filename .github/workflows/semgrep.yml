@@ -48,4 +48,21 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: trivy config .
+
+
+  trivy2:
+    name: trivy2
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+   
+    container:
+      image: aquasec/trivy
+    steps:
+    - uses: actions/checkout@v4
+    - run: docker build -t vuln-demo:latest . trivy image --scanners vuln,secret,config --severity CRITICAL,HIGH vuln-demo:latest
+
+ 
+
+
     
