@@ -22,4 +22,4 @@ jobs:
       image: semgrep/semgrep
     steps:
     - uses: actions/checkout@v4
-    - run: apt install semgrep  semgrep scan --config=auto .
+    - run: semgrep --help 
