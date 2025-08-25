@@ -60,7 +60,7 @@ jobs:
       image: aquasec/trivy
     steps:
     - uses: actions/checkout@v4
-    - run: docker build -t vuln-demo:latest . trivy image --scanners vuln,secret,config --severity CRITICAL,HIGH vuln-demo:latest
+    - run: docker build -t .  trivy image --scanners vuln,secret,config --severity CRITICAL,HIGH 
 
  
 
