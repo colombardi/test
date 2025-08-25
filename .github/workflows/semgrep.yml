@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: semgrep scan --config auto .
-jobs:
+
   trivy:
     name: trivy
     runs-on: ubuntu-latest
